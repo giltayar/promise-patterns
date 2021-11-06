@@ -1,5 +1,5 @@
 {
-  "name": "@roundforest/promise-patterns",
+  "name": "promise-patterns",
   "version": "1.0.1",
   "description": "",
   "type": "module",
@@ -13,10 +13,7 @@
     "src",
     "types"
   ],
-  "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
-  },
+  "private": true,
   "scripts": {
     "build": "concurrently -r 'npm:build:*'",
     "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
