@@ -27,10 +27,25 @@ describe('promise-patterns (unit)', function () {
     expect((await execa('node', ['src/05-rejection-and-catch.js'])).stdout).toMatchSnapshot()
   })
 
-  it('should execute 06 correctly', async () => {
+  it('should execute 06a correctly', async () => {
     expect(
       (await execa('node', ['src/06a-unhandled-rejection.js'], {all: true}).catch((err) => err))
         .all,
     ).toMatchSnapshot()
+  })
+
+  it('should execute 06b correctly', async () => {
+    expect(
+      (await execa('node', ['src/06b-unhandled-rejection.js'], {all: true}).catch((err) => err))
+        .all,
+    ).toMatchSnapshot()
+  })
+
+  it('should execute 07 correctly', async () => {
+    expect((await execa('node', ['src/07-presult.js'])).stdout).toMatchSnapshot()
+  })
+
+  it('should execute 08 correctly', async () => {
+    expect((await execa('node', ['src/08-sresult.js'])).stdout).toMatchSnapshot()
   })
 })

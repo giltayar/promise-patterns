@@ -47,14 +47,32 @@ exports[`promise-patterns (unit) should execute 05 correctly 1`] = `
 404 NOT FOUND"
 `;
 
-exports[`promise-patterns (unit) should execute 06 correctly 1`] = `
+exports[`promise-patterns (unit) should execute 06a correctly 1`] = `
 "this happens before the rejection
-file:///Users/giltayar/code/promise-patterns/src/promise-patterns.js:8
+file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8
     throw new Error(\`\${response.status} \${response.statusText}\`)
           ^
 
 Error: 404 NOT FOUND
-    at starWars (file:///Users/giltayar/code/promise-patterns/src/promise-patterns.js:8:11)
+    at starWars (file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8:11)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async file:///Users/giltayar/code/promise-patterns/src/06a-unhandled-rejection.js:7:1"
 `;
+
+exports[`promise-patterns (unit) should execute 06b correctly 1`] = `
+"file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8
+    throw new Error(\`\${response.status} \${response.statusText}\`)
+          ^
+
+Error: 404 NOT FOUND
+    at starWars (file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8:11)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+`;
+
+exports[`promise-patterns (unit) should execute 07 correctly 1`] = `
+"Leia Organa
+Leia Organa
+Leia Organa"
+`;
+
+exports[`promise-patterns (unit) should execute 08 correctly 1`] = `"ENOENT: no such file or directory, open 'doesnt-exist'"`;

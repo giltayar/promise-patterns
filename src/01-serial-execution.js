@@ -1,4 +1,4 @@
-import {starWars} from './promise-patterns.js'
+import {starWars} from './common/star-wars.js'
 
 const lukeSearch = await starWars('people/?search=luke')
 

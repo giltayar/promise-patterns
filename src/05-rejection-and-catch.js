@@ -1,11 +1,14 @@
-import {starWars} from './promise-patterns.js'
+import {starWars} from './common/star-wars.js'
 
 try {
-  await starWars('😱😱😱😱/?search=vader')
-} catch (/** @type {any} */ err) {
-  console.log(err.message)
+  const fulfilledValue = await starWars('😱😱😱😱/?search=vader')
+
+  console.log(fulfilledValue.results[0].name)
+} catch (/** @type {any} */ rejectedError) {
+  console.log(rejectedError.message)
 }
 
 // Using promises
-starWars('😱😱😱😱/?search=vader').catch((err) => console.log(err.message))
-
+starWars('😱😱😱😱/?search=vader')
+  .then((fulfilledValue) => console.log(fulfilledValue.results[0].name))
+  .catch((rejectedError) => console.log(rejectedError.message))
