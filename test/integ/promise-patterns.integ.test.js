@@ -48,4 +48,16 @@ describe('promise-patterns (unit)', function () {
   it('should execute 08 correctly', async () => {
     expect((await execa('node', ['src/08-sresult.js'])).stdout).toMatchSnapshot()
   })
+
+  it('should execute 09 correctly', async () => {
+    expect(
+      (await execa('node', ['src/09-unhandled-rejection-solution.js'])).stdout,
+    ).toMatchSnapshot()
+  })
+
+  it('should execute 10 correctly', async () => {
+    expect(
+      (await execa('node', ['src/10-unwrap-presult.js'], {all: true}).catch((err) => err)).all,
+    ).toMatchSnapshot()
+  })
 })

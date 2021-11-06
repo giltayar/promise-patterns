@@ -76,3 +76,22 @@ Leia Organa"
 `;
 
 exports[`promise-patterns (unit) should execute 08 correctly 1`] = `"ENOENT: no such file or directory, open 'doesnt-exist'"`;
+
+exports[`promise-patterns (unit) should execute 09 correctly 1`] = `
+"Luke Skywalker
+A New Hope
+The Empire Strikes Back
+Return of the Jedi
+Revenge of the Sith"
+`;
+
+exports[`promise-patterns (unit) should execute 10 correctly 1`] = `
+"file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8
+    throw new Error(\`\${response.status} \${response.statusText}\`)
+          ^
+
+Error: 404 NOT FOUND
+    at starWars (file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8:11)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async presult (file:///Users/giltayar/code/promise-patterns/src/common/presult.js:9:19)"
+`;
