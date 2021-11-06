@@ -78,17 +78,47 @@ describe('promise-patterns (unit)', function () {
   })
 
   it('should execute 12a correctly', async () => {
+    expect((await execa('node', ['src/12a-event-emitter-listener.js'])).stdout).toMatchSnapshot()
+  })
+
+  it('should execute 12b correctly', async () => {
+    expect((await execa('node', ['src/12b-event-emitter-once.js'])).stdout).toMatchSnapshot()
+  })
+
+  it('should execute 12c correctly', async () => {
+    expect(
+      (await execa('node', ['src/12c-event-emitter-once-implementation-try.js'])).stdout,
+    ).toMatchSnapshot()
+  })
+
+  it('should execute 12d correctly', async () => {
+    expect(
+      (
+        await execa('node', ['src/12d-event-emitter-once-implementation-try-2.js'], {
+          all: true,
+        }).catch((err) => err)
+      ).all,
+    ).to.include('promise.resolve is not a function')
+  })
+
+  it('should execute 12e correctly', async () => {
+    expect(
+      (await execa('node', ['src/12e-event-emitter-once-naked-promise-implementation.js'])).stdout,
+    ).toMatchSnapshot()
+  })
+
+  it('should execute 13a correctly', async () => {
     const start = Date.now()
 
-    expect((await execa('node', ['src/12a-mutex.js'])).stdout).toMatchSnapshot()
+    expect((await execa('node', ['src/13a-mutex.js'])).stdout).toMatchSnapshot()
 
     expect(Date.now() - start).to.be.above(2000)
   })
 
-  it('should execute 12b correctly', async () => {
+  it('should execute 13b correctly', async () => {
     const start = Date.now()
 
-    expect((await execa('node', ['src/12b-naked-promises-mutex.js'])).stdout).toMatchSnapshot()
+    expect((await execa('node', ['src/13b-naked-promise-mutex.js'])).stdout).toMatchSnapshot()
 
     expect(Date.now() - start).to.be.above(2000)
   })
