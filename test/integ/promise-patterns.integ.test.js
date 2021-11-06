@@ -19,6 +19,10 @@ describe('promise-patterns (unit)', function () {
     expect((await execa('node', ['src/03-promise-all-and-map.js'])).stdout).toMatchSnapshot()
   })
 
+  it('should execute 03b correctly', async () => {
+    expect((await execa('node', ['src/03b-throat.js'])).stdout).toMatchSnapshot()
+  })
+
   it('should execute 04 correctly', async () => {
     expect((await execa('node', ['src/04-background-execution.js'])).stdout).toMatchSnapshot()
   })

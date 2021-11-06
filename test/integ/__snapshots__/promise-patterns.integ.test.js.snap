@@ -33,6 +33,13 @@ Return of the Jedi
 Revenge of the Sith"
 `;
 
+exports[`promise-patterns (unit) should execute 03b correctly 1`] = `
+"A New Hope
+The Empire Strikes Back
+Return of the Jedi
+Revenge of the Sith"
+`;
+
 exports[`promise-patterns (unit) should execute 04 correctly 1`] = `
 "Darth Vader
 Luke Skywalker
