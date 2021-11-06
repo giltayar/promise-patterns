@@ -10,3 +10,14 @@ export async function starWars(path) {
 
   return /** @type {any} */ (await response.json())
 }
+
+/** @param {string} path */
+export async function starWarsStream(path) {
+  const response = await fetch(new URL(path, 'https://swapi.dev/api/').href)
+
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText}`)
+  }
+
+  return response.body
+}

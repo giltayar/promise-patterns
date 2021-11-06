@@ -35,7 +35,7 @@ describe('promise-patterns (unit)', function () {
     expect(
       (await execa('node', ['src/06a-unhandled-rejection.js'], {all: true}).catch((err) => err))
         .all,
-    ).toMatchSnapshot()
+    ).to.include('Error: 404 NOT FOUND')
   })
 
   it('should execute 06b correctly', async () => {
@@ -63,5 +63,17 @@ describe('promise-patterns (unit)', function () {
     expect(
       (await execa('node', ['src/10-unwrap-presult.js'], {all: true}).catch((err) => err)).all,
     ).toMatchSnapshot()
+  })
+
+  it('should execute 11a correctly', async () => {
+    expect((await execa('node', ['src/11a-streams-with-callbacks.js'])).stdout).toMatchSnapshot()
+  })
+
+  it('should execute 11b correctly', async () => {
+    expect((await execa('node', ['src/11b-streams-with-promises.js'])).stdout).toMatchSnapshot()
+  })
+
+  it('should execute 11c correctly', async () => {
+    expect((await execa('node', ['src/11c-streams-with-promises.js'])).stdout).toMatchSnapshot()
   })
 })

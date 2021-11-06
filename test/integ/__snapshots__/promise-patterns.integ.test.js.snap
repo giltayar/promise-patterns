@@ -102,3 +102,15 @@ Error: 404 NOT FOUND
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async presult (file:///Users/giltayar/code/promise-patterns/src/common/presult.js:9:19)"
 `;
+
+exports[`promise-patterns (unit) should execute 11a correctly 1`] = `
+"10
+and I don't know how to get the rest of the people!"
+`;
+
+exports[`promise-patterns (unit) should execute 11b correctly 1`] = `
+"10
+now we need to get to... https://swapi.dev/api/people/?page=2"
+`;
+
+exports[`promise-patterns (unit) should execute 11c correctly 1`] = `"82"`;
