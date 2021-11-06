@@ -76,4 +76,20 @@ describe('promise-patterns (unit)', function () {
   it('should execute 11c correctly', async () => {
     expect((await execa('node', ['src/11c-streams-with-promises.js'])).stdout).toMatchSnapshot()
   })
+
+  it('should execute 12a correctly', async () => {
+    const start = Date.now()
+
+    expect((await execa('node', ['src/12a-mutex.js'])).stdout).toMatchSnapshot()
+
+    expect(Date.now() - start).to.be.above(2000)
+  })
+
+  it('should execute 12b correctly', async () => {
+    const start = Date.now()
+
+    expect((await execa('node', ['src/12b-naked-promises-mutex.js'])).stdout).toMatchSnapshot()
+
+    expect(Date.now() - start).to.be.above(2000)
+  })
 })

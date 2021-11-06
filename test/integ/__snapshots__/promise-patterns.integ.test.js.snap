@@ -114,3 +114,17 @@ now we need to get to... https://swapi.dev/api/people/?page=2"
 `;
 
 exports[`promise-patterns (unit) should execute 11c correctly 1`] = `"82"`;
+
+exports[`promise-patterns (unit) should execute 12a correctly 1`] = `
+"Luke Skywalker
+Darth Vader
+Han Solo
+Leia Organa"
+`;
+
+exports[`promise-patterns (unit) should execute 12b correctly 1`] = `
+"Luke Skywalker
+Darth Vader
+Han Solo
+Leia Organa"
+`;
