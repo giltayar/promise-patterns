@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`promise-patterns (unit) should execute 01 correctly 1`] = `
+"Luke Skywalker
+Darth Vader"
+`;
+
+exports[`promise-patterns (unit) should execute 02 correctly 1`] = `
+"Luke Skywalker
+Darth Vader
+Luke Skywalker
+Darth Vader
+Luke Skywalker
+Darth Vader"
+`;
+
+exports[`promise-patterns (unit) should execute 03 correctly 1`] = `
+"Luke Skywalker
+Leia Organa
+Darth Vader
+Han Solo
+Luke Skywalker
+Leia Organa
+Darth Vader
+Han Solo
+A New Hope
+The Empire Strikes Back
+Return of the Jedi
+Revenge of the Sith
+A New Hope
+The Empire Strikes Back
+Return of the Jedi
+Revenge of the Sith"
+`;
+
+exports[`promise-patterns (unit) should execute 04 correctly 1`] = `
+"Darth Vader
+Luke Skywalker
+A New Hope
+The Empire Strikes Back
+Return of the Jedi
+Revenge of the Sith"
+`;
+
+exports[`promise-patterns (unit) should execute 05 correctly 1`] = `
+"404 NOT FOUND
+404 NOT FOUND"
+`;
+
+exports[`promise-patterns (unit) should execute 06 correctly 1`] = `
+"this happens before the rejection
+file:///Users/giltayar/code/promise-patterns/src/promise-patterns.js:8
+    throw new Error(\`\${response.status} \${response.statusText}\`)
+          ^
+
+Error: 404 NOT FOUND
+    at starWars (file:///Users/giltayar/code/promise-patterns/src/promise-patterns.js:8:11)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async file:///Users/giltayar/code/promise-patterns/src/06a-unhandled-rejection.js:7:1"
+`;
