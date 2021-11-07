@@ -28,7 +28,8 @@ export function makeOptimizedMutex() {
       if (!theLock) {
         theLock = new Promise((resolve) => (nakedResolve = resolve))
       } else {
-        return await theLock.then(() => this.lock())
+        await theLock
+        return await this.lock()
       }
     },
     unlock() {
