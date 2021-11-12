@@ -3,9 +3,8 @@ import {starWars} from './common/star-wars.js'
 
 const vaderSearchPromise = presult(starWars('😱😱😱😱/?search=vader'))
 
-const {
-  results: [luke],
-} = await starWars('people/?search=luke')
+const lukeSearch = await starWars('people/?search=luke')
+const luke = lukeSearch.results[0]
 
 const lukeFilms = await Promise.all(luke.films.map((/** @type {string} */ film) => starWars(film)))
 

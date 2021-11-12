@@ -28,40 +28,44 @@ describe('promise-patterns (unit)', function () {
   })
 
   it('should execute 05 correctly', async () => {
-    expect((await execa('node', ['src/05-rejection-and-catch.js'])).stdout).toMatchSnapshot()
+    expect((await execa('node', ['src/05a-rejection-and-catch.js'])).stdout).toMatchSnapshot()
   })
 
   it('should execute 06a correctly', async () => {
     expect(
-      (await execa('node', ['src/06a-unhandled-rejection.js'], {all: true}).catch((err) => err))
+      (await execa('node', ['src/05b-unhandled-rejection.js'], {all: true}).catch((err) => err))
         .all,
     ).to.include('Error: 404 NOT FOUND')
   })
 
   it('should execute 06b correctly', async () => {
     expect(
-      (await execa('node', ['src/06b-unhandled-rejection.js'], {all: true}).catch((err) => err))
+      (await execa('node', ['src/05c-unhandled-rejection.js'], {all: true}).catch((err) => err))
         .all,
     ).toMatchSnapshot()
   })
 
   it('should execute 07 correctly', async () => {
-    expect((await execa('node', ['src/07-presult.js'])).stdout).toMatchSnapshot()
+    expect((await execa('node', ['src/06a-presult.js'])).stdout).toMatchSnapshot()
   })
 
   it('should execute 08 correctly', async () => {
-    expect((await execa('node', ['src/08-sresult.js'])).stdout).toMatchSnapshot()
+    expect((await execa('node', ['src/06b-sresult.js'])).stdout).toMatchSnapshot()
   })
 
   it('should execute 09 correctly', async () => {
     expect(
-      (await execa('node', ['src/09-unhandled-rejection-solution.js'])).stdout,
-    ).toMatchSnapshot()
+      (
+        await execa('node', ['src/07a-unhandled-rejection-solution.js'], {all: true}).catch(
+          (err) => err,
+        )
+      ).all,
+    ).to.include('Error: 404 NOT FOUND')
   })
 
   it('should execute 10 correctly', async () => {
     expect(
-      (await execa('node', ['src/10-unwrap-presult.js'], {all: true}).catch((err) => err)).all,
+      (await execa('node', ['src/07b-unwrap-presult.js'], {all: true}).catch((err) => err)).all,
     ).toMatchSnapshot()
   })
 

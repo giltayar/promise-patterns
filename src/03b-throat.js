@@ -1,14 +1,11 @@
 import {starWars} from './common/star-wars.js'
 import throat from 'throat'
 
-const {
-  results: [luke],
-} = await starWars(`people/?search=luke`)
+const lukeSearch = await starWars(`people/?search=luke`)
+const lukeFilms = lukeSearch.results[0].films
 
 const films = await Promise.all(
-  luke.films.map(throat(2, (/** @type {string} */ film) => starWars(film))),
+  lukeFilms.map(throat(2, (/** @type {string} */ film) => starWars(film))),
 )
 
-for (const film of films) {
-  console.log(film.title)
-}
+for (const film of films) console.log(film.title)

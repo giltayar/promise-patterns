@@ -19,14 +19,6 @@ exports[`promise-patterns (unit) should execute 03 correctly 1`] = `
 Leia Organa
 Darth Vader
 Han Solo
-Luke Skywalker
-Leia Organa
-Darth Vader
-Han Solo
-A New Hope
-The Empire Strikes Back
-Return of the Jedi
-Revenge of the Sith
 A New Hope
 The Empire Strikes Back
 Return of the Jedi
@@ -49,10 +41,7 @@ Return of the Jedi
 Revenge of the Sith"
 `;
 
-exports[`promise-patterns (unit) should execute 05 correctly 1`] = `
-"404 NOT FOUND
-404 NOT FOUND"
-`;
+exports[`promise-patterns (unit) should execute 05 correctly 1`] = `"404 NOT FOUND"`;
 
 exports[`promise-patterns (unit) should execute 06b correctly 1`] = `
 "file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8
@@ -71,14 +60,6 @@ Leia Organa"
 `;
 
 exports[`promise-patterns (unit) should execute 08 correctly 1`] = `"ENOENT: no such file or directory, open 'doesnt-exist'"`;
-
-exports[`promise-patterns (unit) should execute 09 correctly 1`] = `
-"Luke Skywalker
-A New Hope
-The Empire Strikes Back
-Return of the Jedi
-Revenge of the Sith"
-`;
 
 exports[`promise-patterns (unit) should execute 10 correctly 1`] = `
 "file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8
