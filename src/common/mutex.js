@@ -1,23 +1,4 @@
 export function makeMutex() {
-  let locked = false
-  return {
-    lock() {
-      return new Promise((resolve) => {
-        if (locked) {
-          setTimeout(() => this.lock().then(resolve), 0)
-        } else {
-          locked = true
-          resolve(undefined)
-        }
-      })
-    },
-    unlock() {
-      locked = false
-    },
-  }
-}
-
-export function makeOptimizedMutex() {
   /** @type {Promise<any> | undefined} */
   let theLock
   /** @type {((value: any) => void) | undefined} */
@@ -29,7 +10,7 @@ export function makeOptimizedMutex() {
         theLock = new Promise((resolve) => (nakedResolve = resolve))
       } else {
         await theLock
-        return await this.lock()
+        await this.lock()
       }
     },
     unlock() {

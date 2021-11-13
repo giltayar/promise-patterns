@@ -69,18 +69,6 @@ describe('promise-patterns (unit)', function () {
     ).toMatchSnapshot()
   })
 
-  it('should execute 11a correctly', async () => {
-    expect((await execa('node', ['src/11a-streams-with-callbacks.js'])).stdout).toMatchSnapshot()
-  })
-
-  it('should execute 11b correctly', async () => {
-    expect((await execa('node', ['src/11b-streams-with-promises.js'])).stdout).toMatchSnapshot()
-  })
-
-  it('should execute 11c correctly', async () => {
-    expect((await execa('node', ['src/11c-streams-with-promises.js'])).stdout).toMatchSnapshot()
-  })
-
   it('should execute 08a correctly', async () => {
     expect((await execa('node', ['src/08a-event-emitter-listener.js'])).stdout).toMatchSnapshot()
   })
@@ -111,18 +99,10 @@ describe('promise-patterns (unit)', function () {
     ).toMatchSnapshot()
   })
 
-  it('should execute 13a correctly', async () => {
+  it('should execute 09 correctly', async () => {
     const start = Date.now()
 
-    expect((await execa('node', ['src/13a-mutex.js'])).stdout).toMatchSnapshot()
-
-    expect(Date.now() - start).to.be.above(2000)
-  })
-
-  it('should execute 13b correctly', async () => {
-    const start = Date.now()
-
-    expect((await execa('node', ['src/13b-naked-promise-mutex.js'])).stdout).toMatchSnapshot()
+    expect((await execa('node', ['src/09-naked-promise-mutex.js'])).stdout).toMatchSnapshot()
 
     expect(Date.now() - start).to.be.above(2000)
   })

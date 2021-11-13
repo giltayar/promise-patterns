@@ -12,9 +12,7 @@ const people = await Promise.all([
   getInformationAboutPerson('Leia Organa'),
 ])
 
-for (const person of people) {
-  console.log(person.name)
-}
+people.forEach((person) => console.log(person.name))
 
 /** @param {string} person */
 async function getInformationAboutPerson(person) {
