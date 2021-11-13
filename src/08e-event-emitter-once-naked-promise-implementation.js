@@ -26,13 +26,13 @@ console.log('the rest of star wars occurs here. Yay!')
  */
 
 async function once(r2d2, event) {
-  const nakedPromise = new Promise((resolve) => (nakedResolve = resolve))
   /** @type {{(value: any): void}} */
-  var nakedResolve
+  let nakedResolve
+  const nakedPromise = new Promise((resolve) => (nakedResolve = resolve))
 
   r2d2.addListener(event, (args) => {
     nakedResolve(args)
   })
 
-  return nakedPromise
+  await nakedPromise
 }

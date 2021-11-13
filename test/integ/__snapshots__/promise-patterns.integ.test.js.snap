@@ -61,6 +61,26 @@ Leia Organa"
 
 exports[`promise-patterns (unit) should execute 08 correctly 1`] = `"ENOENT: no such file or directory, open 'doesnt-exist'"`;
 
+exports[`promise-patterns (unit) should execute 08a correctly 1`] = `
+"help me, obi wan, you're my only hope
+the rest of star wars occurs here. Uggghhh!"
+`;
+
+exports[`promise-patterns (unit) should execute 08b correctly 1`] = `
+"help me, obi wan, you're my only hope
+the rest of star wars occurs here. Yay!"
+`;
+
+exports[`promise-patterns (unit) should execute 08c correctly 1`] = `
+"the rest of star wars occurs here. Yay!
+help me, obi wan, you're my only hope"
+`;
+
+exports[`promise-patterns (unit) should execute 08e correctly 1`] = `
+"help me, obi wan, you're my only hope
+the rest of star wars occurs here. Yay!"
+`;
+
 exports[`promise-patterns (unit) should execute 10 correctly 1`] = `
 "file:///Users/giltayar/code/promise-patterns/src/common/star-wars.js:8
     throw new Error(\`\${response.status} \${response.statusText}\`)
@@ -83,26 +103,6 @@ now we need to get to... https://swapi.dev/api/people/?page=2"
 `;
 
 exports[`promise-patterns (unit) should execute 11c correctly 1`] = `"82"`;
-
-exports[`promise-patterns (unit) should execute 12a correctly 1`] = `
-"help me, obi wan, you're my only hope
-the rest of star wars occurs here. Uggghhh!"
-`;
-
-exports[`promise-patterns (unit) should execute 12b correctly 1`] = `
-"help me, obi wan, you're my only hope
-the rest of star wars occurs here. Yay!"
-`;
-
-exports[`promise-patterns (unit) should execute 12c correctly 1`] = `
-"the rest of star wars occurs here. Yay!
-help me, obi wan, you're my only hope"
-`;
-
-exports[`promise-patterns (unit) should execute 12e correctly 1`] = `
-"help me, obi wan, you're my only hope
-the rest of star wars occurs here. Yay!"
-`;
 
 exports[`promise-patterns (unit) should execute 13a correctly 1`] = `
 "Luke Skywalker

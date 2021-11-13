@@ -25,12 +25,13 @@ console.log('the rest of star wars occurs here. Yay!')
  * @param {string} event
  */
 async function once(r2d2, event) {
+  const promise = new Promise((_resolve) => undefined)
+
   r2d2.addListener(event, () => {
+    const promise = new Promise((_resolve) => undefined)
     // @ts-expect-error
     promise.resolve()
   })
 
-  const promise = new Promise((_resolve) => undefined)
-
-  return promise
+  await promise
 }
