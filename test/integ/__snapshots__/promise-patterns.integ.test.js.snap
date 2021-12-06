@@ -72,11 +72,16 @@ the rest of star wars occurs here. Yay!"
 `;
 
 exports[`promise-patterns (unit) should execute 08c correctly 1`] = `
+"help me, obi wan, you're my only hope
+the rest of star wars occurs here. Yay!"
+`;
+
+exports[`promise-patterns (unit) should execute 08d correctly 1`] = `
 "the rest of star wars occurs here. Yay!
 help me, obi wan, you're my only hope"
 `;
 
-exports[`promise-patterns (unit) should execute 08e correctly 1`] = `
+exports[`promise-patterns (unit) should execute 08f correctly 1`] = `
 "help me, obi wan, you're my only hope
 the rest of star wars occurs here. Yay!"
 `;

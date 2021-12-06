@@ -79,23 +79,29 @@ describe('promise-patterns (unit)', function () {
 
   it('should execute 08c correctly', async () => {
     expect(
-      (await execa('node', ['src/08c-event-emitter-once-implementation-try.js'])).stdout,
+      (await execa('node', ['src/08c-event-emitter-once-regular-implementation.js'])).stdout,
     ).toMatchSnapshot()
   })
 
   it('should execute 08d correctly', async () => {
     expect(
+      (await execa('node', ['src/08d-event-emitter-once-implementation-try.js'])).stdout,
+    ).toMatchSnapshot()
+  })
+
+  it('should execute 08e correctly', async () => {
+    expect(
       (
-        await execa('node', ['src/08d-event-emitter-once-implementation-try-2.js'], {
+        await execa('node', ['src/08e-event-emitter-once-implementation-try-2.js'], {
           all: true,
         }).catch((err) => err)
       ).all,
     ).to.include('promise.resolve is not a function')
   })
 
-  it('should execute 08e correctly', async () => {
+  it('should execute 08f correctly', async () => {
     expect(
-      (await execa('node', ['src/08e-event-emitter-once-naked-promise-implementation.js'])).stdout,
+      (await execa('node', ['src/08f-event-emitter-once-naked-promise-implementation.js'])).stdout,
     ).toMatchSnapshot()
   })
 
