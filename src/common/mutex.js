@@ -1,24 +1,16 @@
-export function makeMutex() {
-  /** @type {Promise<any> | undefined} */
-  let theLock
-  /** @type {((value: any) => void) | undefined} */
-  let nakedResolve
-  return {
-    /** @returns {Promise<void>} */
-    async lock() {
-      if (!theLock) {
-        theLock = new Promise((resolve) => (nakedResolve = resolve))
-      } else {
-        await theLock
-        await this.lock()
-      }
-    },
-    unlock() {
-      if (theLock) {
-        nakedResolve?.(undefined)
-        nakedResolve = undefined
-        theLock = undefined
-      }
-    },
-  }
+function makeMutex() {
+  let latestLock;
+  
+  return async function lock() {
+    let nakedResolve;
+    const currLatestLock = latestLock;
+    
+    latestLock = new Promise((resolve) => (nakedResolve = resolve));
+    
+    await currLatestLock;
+    
+    return function unlock() {
+      nakedResolve();
+    }
+  };
 }
