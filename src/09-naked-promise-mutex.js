@@ -3,7 +3,7 @@ import {makeMutex} from './common/mutex.js'
 // eslint-disable-next-line node/no-missing-import
 import {setTimeout} from 'timers/promises'
 
-const mutex = makeMutex()
+const mutexLock = makeMutex()
 
 const people = await Promise.all([
   getInformationAboutPerson('Luke Skywalker'),
@@ -16,13 +16,13 @@ people.forEach((person) => console.log(person.name))
 
 /** @param {string} person */
 async function getInformationAboutPerson(person) {
-  await mutex.lock()
+  const unlock = await mutexLock()
   try {
     const personSearch = await starWars(`people/?search=${encodeURIComponent(person)}`)
     await setTimeout(500)
 
     return personSearch.results[0]
   } finally {
-    await mutex.unlock()
+    unlock()
   }
 }
